@@ -37,8 +37,6 @@ Gameplay Ability System（GAS）を使用し、攻撃、武器Collision、ダメ
 ---
 
 ## 戦闘システムの流れ
-
-```text
 Input
 → GameplayAbility 発動
 → 攻撃アニメーション再生
@@ -49,7 +47,9 @@ Input
 → AttributeSet 更新
 → UI 反映
 
-設計方針
+--
+
+##設計方針
 戦闘処理を一つのクラスにまとめず、役割ごとに分けることを意識しました。
 CombatComponent
 武器の登録、現在装備中の武器管理、Collision切り替えを担当
@@ -69,7 +69,9 @@ HP、Rageなどのステータス管理を担当
 UIComponent
 Attribute変更時のUI更新通知を担当
 
-主要コード
+--
+
+##主要コード
 ファイル	役割
 PawnCombatComponent.cpp	武器登録、装備武器管理、Collision制御
 WarriorWeaponBase.cpp	武器CollisionのOverlap検出
@@ -80,7 +82,9 @@ GEExcCalc_DamageTaken.cpp	ダメージ計算
 WarriorAttributeSet.cpp	HP / Rage 更新、死亡判定、UI通知
 HeroGameplayAbility_TargetLock.cpp	ターゲットロック処理
 
-こだわった点
+--
+
+##こだわった点
 GameplayTag を使った管理
 入力、武器、状態、イベントを GameplayTag で管理することで、文字列や個別フラグに依存しすぎない構成にしました。
 GameplayEvent による GAS 連携
