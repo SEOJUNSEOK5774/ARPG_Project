@@ -49,7 +49,7 @@ Input
 
 ---
 
-##設計方針
+## 設計方針
 戦闘処理を一つのクラスにまとめず、役割ごとに分けることを意識しました。
 
 - CombatComponent
@@ -72,7 +72,7 @@ Attribute変更時のUI更新通知を担当
 
 ---
 
-##主要コード
+## 主要コード
 ファイル	役割
 - PawnCombatComponent.cpp	武器登録、装備武器管理、Collision制御
 - WarriorWeaponBase.cpp	武器CollisionのOverlap検出
@@ -85,7 +85,7 @@ Attribute変更時のUI更新通知を担当
 
 ---
 
-##こだわった点
+## こだわった点
 - GameplayTag を使った管理
 - 入力、武器、状態、イベントを GameplayTag で管理することで、文字列や個別フラグに依存しすぎない構成にしました。
 - GameplayEvent による GAS 連携
@@ -98,7 +98,7 @@ Attribute変更時のUI更新通知を担当
 
 ---
 
-今後の改善点
+## 今後の改善点
 - デバッグ表示やログの整理
 - 命名ミスの修正
 - ダメージ計算の例外処理強化
